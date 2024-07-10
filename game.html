@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Image Swap</title>
+    <style>
+        body {
+            background-image: url('pexels-dk004-14885685.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const imageSources = [
+            'pexels-lanophotography-168938.jpg','sports-car-driving-asphalt-road-night-generative-ai.jpg','white-coupe-sport-car-standing-road-front-view.jpg',
+            'cars.jpeg','wp2148049-dodge-demon-wallpapers.jpg','wp3324581-jeep-logo-hd-wallpaper.jpg','wp9130185-black-hellcat-wallpapers.jpg'
+        ];
+
+        function changeBackgroundImage() {
+            const randomIndex = Math.floor(Math.random() * imageSources.length);
+            document.body.style.backgroundImage = `url(${imageSources[randomIndex]})`;
+        }
+
+        //change the background image every 5 seconds(500 milliseconds)
+        setInterval(changeBackgroundImage, 500);
+    </script>
+</body>
+</html>
